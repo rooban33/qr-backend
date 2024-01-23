@@ -1,0 +1,9 @@
+version: 2
+services:
+  - name: web
+    env:
+      - PORT=3000
+      - FLASK_ENV=production
+      - SECRET_KEY=mysecretkey
+    buildScript: pip install -r requirements.txt
+    runScript: python app.py
