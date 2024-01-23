@@ -19,5 +19,9 @@ def scan_qr_code():
     else:
         return jsonify({'message': 'No QR code detected'})
 
+@app.route('/', methods=['POST'])
+def get():
+    print('Hello Shajith!!')
+
 if __name__ == '__main__':
     app.run(debug=True)
