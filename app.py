@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 @app.route('/scan_qr_code', methods=['POST'])
 def scan_qr_code():
+    print("I am Called")
     _, img = cv2.VideoCapture(0).read()
     detector = cv2.QRCodeDetector()
     data, _, _ = detector.detectAndDecode(img)
@@ -24,4 +25,5 @@ def get():
     print('Hello Shajith!!')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+
